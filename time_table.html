@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css"> 
+    <style>
+         
+
+    
+         
+        table {
+            width: 96%;
+            margin: auto; 
+            box-shadow: 0px 0px 13px 5px rgb(184, 184, 184);
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            border-collapse: collapse;
+            margin: auto;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            
+        }
+
+        .time_table {
+            margin: 15px;
+            margin-top: 5px;
+            overflow-x: auto;
+             
+        }
+
+        .time_table, h1 { 
+            padding: 6px 5px 15px 5px;   
+            text-align: center;
+            margin: 25px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            font-size: 3rem;
+             
+             
+        }   
+        #time-table-span {
+            border: solid rgb(184, 184, 184);
+            padding: 13px;
+            box-shadow: 0px 0px 5px 2px rgb(184, 184, 184);
+        }
+
+        td {
+            text-align: center;
+            padding: 5px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            font-size: 1.9rem;
+            word-spacing: 2px;
+            letter-spacing: 0.6px;
+             
+        }
+
+        td:hover {
+            background-color: rgb(155, 155, 155);
+            color: white;
+
+        }
+        th {
+            background-image: linear-gradient(#04aa78,#03966a);
+            color: white;
+            padding: 5px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-size: 2.3rem;
+        }
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-shadow: 0 0 2px grey; 
+            margin-bottom: 35px;
+        }
+        
+
+          
+    </style>
+</head>
+<body>
+    <!-- ---navbar section start--- -->
+    <header class="section-navbar">
+        <div class="container">
+
+            <!-- navbar logo -->
+            <div class="navbar-brand">
+                <a href="index.html">
+                    <img src="images/logo2.png" alt="main logo" width="25%" height="auto" style="border: 3px solid #a1556a; border-radius: 7px; box-shadow: 0 0 5px 1px rgb(201, 190, 193); box-shadow: 0 0 7px 2px rgb(185, 175, 178);">
+                </a>
+            </div>
+
+            <!-- navbar list -->
+            <nav class="navbar">
+                <ul>
+                    <li class="nav-items"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-items"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-items"><a class="nav-link" href="services.html">Services</a></li>
+                     
+                    <li class="nav-items"><a class="nav-link" href="time_table.html">TimeTable</a></li>
+                    <li class="nav-items"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+      </header>  
+     <!-- ---navbar section end--- -->
+
+    
+  <div class="time_table">
+    <h1><span id="time-table-span">My Time Table</span></h1> 
+    <table>
+        <tr>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+        <!--This is 7 Am-->
+        <tr>
+            <td>7 AM<br>Wake Up</td>
+            <td>7 AM<br>Wake Up</td>
+            <td>7 AM<br>Wake Up</td>
+            <td>7 AM<br>Wake Up</td>
+            <td>7 AM<br>Wake Up</td>
+            <td>7 AM<br>Wake Up</td>
+            <td>6 AM<br>Wake Up</td>
+        </tr>
+        <!-- This is at 7.10 AM   -->
+        <tr>
+            <td>7.10 AM<br>Cooking</td>
+            <td>7.10 AM<br>Cooking</td>
+            <td>7.10 AM<br>Cooking</td>
+            <td>7.10 AM<br>Cooking</td>
+            <td>7.10 AM<br>Cooking</td>
+            <td>7.10 AM<br>Cooking</td>
+            <td>6.30 AM<br>Sunday Mass</td>
+        </tr>
+        <!-- This is 7.30 AM -->
+        <tr>
+            <td>7.30 AM<br>Breakfast</td>
+            <td>7.30 AM<br>Breakfast</td>
+            <td>7.30 AM<br>Breakfast</td>
+            <td>7.30 AM<br>Breakfast</td>
+            <td>7.30 AM<br>Breakfast</td>
+            <td>7.30 AM<br>Breakfast</td>
+            <td>7.30 AM<br>Cooking</td>
+        </tr>
+        <!-- This is 8.00 AM -->
+        <tr>
+            <td>8.00 AM<br>Work Time</td>
+            <td>8.00 AM<br>Work Time</td>
+            <td>8.00 AM<br>Work Time</td>
+            <td>8.00 AM<br>Work Time</td>
+            <td>8.00 AM<br>Work Time</td>
+            <td>8.00 AM<br>Work Time</td>
+            <td>8.00 AM<br>Breakfast</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>8.30 AM<br>Work Time</td>
+        </tr>
+        <!-- This is 11.15 AM -->
+        <tr>
+            <td>11.15 AM<br>Eatting/Rest Break</td>
+            <td>11.15 AM<br>Eatting/Rest Break</td>
+            <td>11.15 AM<br>Eatting/Rest Break</td>
+            <td>11.15 AM<br>Eatting/Rest Break</td>
+            <td>11.15 AM<br>Eatting/Rest Break</td>
+            <td>11.15 AM<br>Eatting/Rest Break</td>
+            <td>11.15 AM<br>Eatting/Rest Break</td>
+        </tr>
+        <!-- This is 11.30 AM -->
+        <tr>
+            <td>11.30 AM<br>Work Time</td>
+            <td>11.30 AM<br>Work Time</td>
+            <td>11.30 AM<br>Work Time</td>
+            <td>11.30 AM<br>Work Time</td>
+            <td>11.30 AM<br>Work Time</td>
+            <td>11.30 AM<br>Work Time</td>
+            <td>11.30 AM<br>Work Time</td>
+        </tr>
+        <!-- This is 12.30 PM -->
+        <tr>
+            <td>12.30 PM<br>Exercise</td>
+            <td>12.30 PM<br>Exercise</td>
+            <td>12.30 PM<br>Exercise</td>
+            <td>12.30 PM<br>Exercise</td>
+            <td>12.30 PM<br>Exercise</td>
+            <td>12.30 PM<br>Exercise</td>
+            <td>12.30 PM<br>Work Time</td>
+        </tr>
+        <!-- This is 1.30 PM -->
+        <tr>
+            <td>1.30 PM<br>Lunch Break</td>
+            <td>1.30 PM<br>Lunch Break</td>
+            <td>1.30 PM<br>Lunch Break</td>
+            <td>1.30 PM<br>Lunch Break</td>
+            <td>1.30 PM<br>Lunch Break</td>
+            <td>1.30 PM<br>Lunch Break</td>
+            <td>1.30 PM<br>Lunch Break</td>
+        </tr>
+         <!-- This is 2.30 PM -->
+         <tr>
+            <td>2.30 PM<br>Work Time</td>
+            <td>2.30 PM<br>Work Time</td>
+            <td>2.30 PM<br>Work Time</td>
+            <td>2.30 PM<br>Work Time</td>
+            <td>2.30 PM<br>Work Time</td>
+            <td>2.30 PM<br>Work Time</td>
+            <td>2.30 PM<br>Sleep Break</td>
+        </tr>   
+             <!-- This is 4.30 PM -->
+         <tr>
+            <td>4.30 PM<br>Eatting/Rest Break</td>
+            <td>4.30 PM<br>Eatting/Rest Break</td>
+            <td>4.30 PM<br>Eatting/Rest Break</td>
+            <td>4.30 PM<br>Eatting/Rest Break</td>
+            <td>4.30 PM<br>Eatting/Rest Break</td>
+            <td>4.30 PM<br>Eatting/Rest Break</td>
+            <td>4.30 PM<br>Eatting/Rest Break</td>
+        </tr> 
+        <!-- This is 4.45 PM -->
+        <tr>
+            <td>4.45 PM<br>Work Time</td>
+            <td>4.45 PM<br>Work Time</td>
+            <td>4.45 PM<br>Work Time</td>
+            <td>4.45 PM<br>Work Time</td>
+            <td>4.45 PM<br>Work Time</td>
+            <td>4.45 PM<br>Work Time</td>
+            <td>4.45 PM<br>Work Time</td>
+        </tr> 
+        <!-- This is 7.00 PM -->
+        <tr>
+            <td>7.00 PM<br>Tea Break</td>
+            <td>7.00 PM<br>Tea Break</td>
+            <td>7.00 PM<br>Tea Break</td>
+            <td>7.00 PM<br>Tea Break</td>
+            <td>7.00 PM<br>Tea Break</td>
+            <td>7.00 PM<br>Tea Break</td>
+            <td>7.00 PM<br>Tea Break</td>
+        </tr>
+        <!-- This is 7.30 PM -->
+        <tr>
+            <td>7.30 PM<br>Work Time</td>
+            <td>7.30 PM<br>Work Time</td>
+            <td>7.30 PM<br>Work Time</td>
+            <td>7.30 PM<br>Work Time</td>
+            <td>7.30 PM<br>Work Time</td>
+            <td>7.30 PM<br>Work Time</td>
+            <td>7.30 PM<br>Work Time</td>
+        </tr>
+        <!-- This is 10.00 PM -->
+        <tr> 
+            <td>10.00 PM<br>Dinner</td>
+            <td>10.00 PM<br>Dinner</td>
+            <td>10.00 PM<br>Dinner</td>
+            <td>10.00 PM<br>Dinner</td>
+            <td>10.00 PM<br>Dinner</td>
+            <td>10.00 PM<br>Dinner</td>
+            <td>10.00 PM<br>Dinner</td>
+        </tr>
+        <!-- This is 11.00PM -->
+        <tr> 
+            <td>11.00 PM<br>Bedtime</td>
+            <td>11.00 PM<br>Bedtime</td>
+            <td>11.00 PM<br>Bedtime</td>
+            <td>11.00 PM<br>Bedtime</td>
+            <td>11.00 PM<br>Bedtime</td>
+            <td>11.00 PM<br>Bedtime</td>
+            <td>11.00 PM<br>Bedtime</td>
+        </tr>
+    </table>
+ 
+  </div>
+
+
+
+
+
+  <!-- section contect me start -->
+  <div class="section-contact--homepage" id="section-contect--homepage">
+    <div class="container grid grid-two--cols">
+        <div class="contact-content">
+             
+            <h2 class="contact-title">📢 Like my work? <br>Let's create something amazing together!</h2>
+            <p>Click the button below to reach out to me.</p>
+            <div class="btn-contact">
+                <a href="contact.html" class="btn">contact me<i class="fa-solid fa-id-badge"></i></a>
+            </div>
+
+        </div>
+
+        <div class="contact-image">
+            <img src="images/form image.png" alt="form image">
+
+        </div>
+    </div>
+ </div>
+
+<!-- section contect me end -->
+
+<!-- footer section start -->
+ <footer>
+    
+    <div class="container grid grid-four--cols">
+
+        <div class="footer-1--div">
+            <div class="logo-brand">
+                <a href="index.html" class="footer-subheading">Get in Touch</a>
+            </div>
+            <p>Have a project in mind? Let’s collaborate!</p>
+
+            <div class="logo-brand--email">
+                <div class="email-name">Email - </div>
+                <a href="https://mail.google.com/mail/u/0/#sent?compose=DmwnWsdDzHtRgTfKPjnZMRBVqKRGkWcczZMSRsDhBmQwbZgpPtJjkVznQFnHcFtmLrrTZSBqtjkb" target="_blank">derrickfers@gmail.com</a>
+            </div>
+
+            <div class="social-footer--icons">
+                <a href="https://www.instagram.com/casper_3d_modeling" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.youtube.com/@casper3D6395" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+ 
+                <a href="https://www.facebook.com/derrick.fernandes.75098" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a href="https://www.behance.net/casperfernandes25" target="_blank">
+                    <i class="fa-brands fa-behance"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- <div class="footer-2--div">
+            <div class="logo-brand">
+                <a href="index.html" class="footer-subheading">Get in Touch</a>
+            </div>
+            <p>Have a project in mind? Let’s collaborate!</p>
+        </div> -->
+
+        <div class="footer-3--div">
+            <p class="footer-subheading">Services Offered</p>
+                <ul>
+                    <li><a href="">Web Design</a></li>
+                    <li><a href="">3D Modeling & Animation</a></li>
+                    <li><a href="">Logo Design</a></li>
+                    <li><a href="">Music Production</a></li>
+                    <li><a href="">Video Editing</a></li>
+                    <li><a href="">Photo Editing</a></li>
+                </ul>  
+        </div>
+
+        <div class="footer-4--div">
+            <p class="footer-subheading">Blog</p>
+                <ul>
+                    <li><a href="">Blog 1</a></li>
+                    <li><a href="">Blog 2</a></li>
+                    <li><a href="">Blog 3</a></li>
+                    <li><a href="">Blog 4</a></li>
+                    <li><a href="">Blog 5</a></li>
+                </ul>  
+        </div>
+        
+
+    </div>
+    <div class="copyright"> 
+        <div class="container">    
+            <p><strong>Copyright &copy;2025 All right reserved| This is made by Derrick Fernandes.</strong></p>
+        </div>  
+    </div>
+ </footer>
+
+<!-- footer section end -->
+
+</body>
+</html>
