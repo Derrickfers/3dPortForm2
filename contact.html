@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Derrick Portfolio</title>
+    <title>Contact Form</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/styles.css"> 
@@ -16,7 +16,7 @@
             <!-- navbar logo -->
             <div class="navbar-brand">
                 <a href="index.html">
-                    <img src="images/logo2.png" alt="main logo" width="25%" height="auto" style="border: 3px solid #a1556a; border-radius: 7px; box-shadow: 0 0 5px 1px rgb(201, 190, 193); box-shadow: 0 0 7px 2px rgb(185, 175, 178);">
+                    <img src="images/logo2.png" alt="main logo">
                 </a>
             </div>
 
@@ -35,36 +35,70 @@
       </header>  
      <!-- ---navbar section end--- -->
 
-     <div class="container"> 
-     <h1>Form</h1>
 
-     <!--contact me section-->
-    <secton class="forms-section" style="font-size: 2rem;">
-        <h1>Contact Me</h1>
-        <p style="margin: 2rem 0;"><strong>Please fill this form in a decent manner.</strong></p>
-        <!--form filling-->
-        <form>
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username"> 
-            </div>
-            <br>
-            <div>
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email">
-            </div>
-            <br>
-            <div>
-                <label for="textarea">Message:</label>
-                <textarea name="" id="textarea" cols="30" rows="10"></textarea>
-            </div>
-            <br>
-            <input type="submit" value="Submit" style="font-size: large;"> 
-        </form>
-        </secton>
-        
+     <!-- section form start -->
 
-     </div>
+     <section class="section-form">
+        <div class="container">
+             
+            <h2 class="section-common-heading">contact me</h2>
+            <p class="section-common-subheading">Get in touch with me, if you like my work.</p>
+        </div>
+
+        <div class="container grid grid-two--cols mb-9">
+            <div class="contact-contant">
+                <form action="https://formspree.io/f/xdkeorqg" method="POST">
+
+                    <div class="container grid grid-two--cols mb-3"> 
+                        <div>
+                            <label for="Username">Username</label>
+                            <input type="text" name="Username" id="username" required autocomplete="off" placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label for="email">enter your email</label>
+                            <input type="email" name="email" id="email" required autocomplete="off" required placeholder="email@gmail.com">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div>
+                            <label for="subject">subject</label>
+                            <input type="text" name="subject" id="subject" required autocomplete="off" placeholder="main title">
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message">message</label>
+                        <textarea name="message" id="message" cols="20" rows="10" required autocomplete="off" placeholder="write something"></textarea>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-submit">send message</button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1921.5514010397794!2d73.86476550663343!3d15.58615535368474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1741785083461!5m2!1sen!2sin" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+            </div>
+
+        </div>
+
+     </section>
+
+
+
+     <!-- section form end -->
+
+
+      
 
 
 
