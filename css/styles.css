@@ -1058,6 +1058,13 @@ li {
           align-items: self-start;
           text-align: left;
         } 
+        & .text-align--left .why-choose--div {
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          align-items: self-start;
+          text-align: left;
+        } 
       }
       .section-why-choose {
     
