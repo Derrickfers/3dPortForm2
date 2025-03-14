@@ -925,6 +925,11 @@ li {
   
   @media (width <= 998px) {
 
+      .fa-solid {
+      padding: 1.8rem;  
+      font-size: 1.8rem; 
+    }
+
     /* tbody {
       width: 25%px;
       height: auto;
