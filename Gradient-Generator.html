@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Generator</title>
+    <style>
+
+        :root {
+            --gra1: #439cfb;
+            --gra2: #f187fb;
+            --gra1-btn: #439cfb;
+            --gra2-btn: #f187fb;
+            --box-shad-btn : rgb(136, 136, 136) 0 0 5px 1px;
+
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+        } 
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35rem;
+            background-image: linear-gradient(to right, #439cfb, #f187fb);
+        }
+
+        .container {
+            margin: 0 1rem;
+            padding: 0.6rem 0.5rem;
+            
+        }
+        .gradient-section .container {
+            text-align: center;
+             
+            
+            & h3 {
+                text-transform: capitalize;
+                padding: 0.2rem 0.2rem;
+            }
+
+             
+
+            & #myButton {
+            border: none;    
+            background-color: var(--gra1-btn);
+            padding: 0.7rem 2.5rem;
+            display:  inline-block;
+            margin: 1rem 0.5rem;
+            box-shadow: var(--box-shad-btn);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            font-size: 19px;
+             
+            color: white;
+            cursor: pointer;
+            border-radius: 6px;
+            position: relative;
+            &::after {
+                position: absolute;
+                content: " ";
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                 
+                transition: all 0.3s linear;
+                /* background-color: rgb(245, 29, 29); */
+                 
+                border-bottom: 45px rgba(238, 238, 238, 0.2) dashed;
+                
+            }
+            
+            }
+
+            & #myButton2 {
+            border: none;
+            background-color: var(--gra2-btn);
+            padding: 0.7rem 2.5rem;
+            display:  inline-block;
+            margin: 1rem 0.5rem;
+            box-shadow: var(--box-shad-btn);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            font-size: 19px;
+            
+            color: white;
+            cursor: pointer;
+            border-radius: 6px;
+            position: relative;
+            &::after {
+                position: absolute;
+                content: " ";
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                 
+                transition: all 0.3s linear;
+                /* background-color: rgb(245, 29, 29); */
+                 
+                border-bottom: 45px rgba(238, 238, 238, 0.2) dashed;
+            }
+            }
+
+            & #myButton:hover {
+                color: var(--gra1-btn);
+                background-color: rgb(224, 224, 224);
+                 
+            }
+            & #myButton:hover:after {
+                width: 100%;  
+            }
+            & #myButton2:hover:after {
+                width: 100%;  
+            }
+            & #myButton2:hover {
+                color: var(--gra2-btn);
+                background-color: rgb(224, 224, 224);     
+            }
+            
+            & .copyCode {
+                margin: 0.5rem;
+                padding: 0.9rem 0.5rem;
+                 
+                background-color: rgba(255, 255, 255, 0.3);
+                font-size: 0.9rem;
+                border-left: 2px solid rgb(75, 75, 75);
+                cursor: pointer;
+            }
+            & .copyCode:hover {
+                background-color: rgba(255, 255, 255, 0.671);
+                
+            }
+            & .copyCode:active {
+                cursor: wait;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <section class="gradient-section">
+        <div class="container">
+            <div class="button-part">
+            <button id="myButton">#439cfb</button> 
+                <button id="myButton2">#f187fb</button>
+            </div>
+            <h3>copy your code here.</h3>
+            <div class="copyCode" title="Click To Copy Code">
+                Background-image: linear-gradient(to right, #439cfb, #f187fb);    
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        let btn1 = document.getElementById("myButton");
+        let btn2 = document.getElementById("myButton2");
+        let copyDiv = document.querySelector(".copyCode");
+        let rgb1 = "#439cfb"; 
+        let rgb2 = "#f187fb";
+
+        const hexValues = () => {
+            let myHexValues = "0123456789abcdef";
+            let colors= "#";
+            
+            for (let i = 0; i < 6; i++) {
+                colors = colors + myHexValues[Math.floor(Math.random() * myHexValues.length)];        
+            } 
+            return colors;
+        }; 
+
+        const handleBtn1 = () => {
+             rgb1 = hexValues();
+            console.log(rgb1);
+            btn1.innerText = `${rgb1}`;
+            btn1.style.setProperty('--gra1-btn', `${rgb1}`);
+            
+            document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
+            copyDiv.innerHTML = `Background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+        };  
+
+        const handleBtn2 = () => { 
+             rgb2 = hexValues();
+            console.log(rgb2);
+            btn2.innerText = `${rgb2}`;
+            btn2.style.setProperty('--gra2-btn', `${rgb2}`);
+              
+            document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
+            copyDiv.innerHTML = `Background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+        }; 
+
+        btn1.addEventListener("click", handleBtn1);
+        btn2.addEventListener("click", handleBtn2);
+        copyDiv.addEventListener("click",() => 
+        navigator.clipboard.writeText(copyDiv.innerText)
+    );
+    </script>
+    
+</body>
+</html>
