@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <style>
+        html {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body {
+            background-image: linear-gradient(to right, #045dfc, #5fa6c8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-todo .heading h1 {
+            font-weight: bolder;
+            background-image: linear-gradient(to right, #045dfc, #5fa6c8);
+            color: transparent;
+            background-clip: text;
+            margin: 0;
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 27px;
+
+        }
+
+        .section-todo {
+            background-color: #c6dbff;
+            padding: 1.3rem;
+            border-radius: 10px;
+            margin: 1rem 2rem;
+            & .todo-list-input {
+                padding: 1rem 0;
+                & #inputValue {
+                    padding: 0.8rem 0.3rem;
+                    border-radius: 7px;
+                    border: solid #b4cfff 2px;
+                    width: 500px;
+                    font-size: 15px;
+                    background-color: white;
+                }
+            }
+            & .todo-list-elem {
+                
+                padding: 1rem 1rem;
+                background-color: white;
+                border-radius: 7px;
+                height: 100%;
+                border: dashed #b4cfff 2px;
+                & .main-todo-div ul {
+                    background-color: #deeaff;
+                    display: flex;
+                    /* grid-template-columns: repeat(2,1fr); */
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 7px;
+                    text-transform: capitalize;
+                    font-size: 17px;
+                    color: #045dfc;
+                    flex-wrap: wrap;
+                     
+                    & li {
+                    margin: 5px 0px;
+                     
+                    padding-right: 5px;
+                      
+                };
+                     
+                    & .btn2 {
+                        margin-left: auto;
+                        
+                    }
+                    
+                }
+                 
+            }
+        }
+        .main-todo-div1 p {
+               padding: 5rem 1rem;
+               text-align: center;
+               text-transform: capitalize;
+               letter-spacing: 0.3px;
+               color: #045dfc;
+               font-size: 16.5px;
+        }
+        .btn {
+            border: none;
+            padding: 0.8rem 0.6rem;
+            border-radius: 7px;
+            box-shadow: 1px 1px 3px 0.5px rgb(144, 147, 151) ;
+            background-image: linear-gradient(to right, #045dfc, #5fa6c8);
+            color: #f4f8fd;
+            font-weight: 700;
+            font-size: 15px;
+            margin-left: 5px;
+            text-align: center;
+            width: fit-content;
+            &:hover {
+                background-image: linear-gradient(to right, #045dfc, #5fa6c8);
+            color: transparent;
+            background-clip: text;
+            cursor: pointer;
+            
+
+            }
+            &:active {
+                background-image: linear-gradient(to right, #045dfc, #5fa6c8);
+            color: rgb(52, 196, 52);
+            background-clip: text;
+            }
+        }
+
+        .btn2 {
+            border: none;
+            padding: 0.8rem 0.6rem;
+            border-radius: 7px;
+            box-shadow: 1px 1px 3px 0.5px rgb(144, 147, 151) ;
+            background-image: linear-gradient(to right, #045dfc, #5fa6c8);
+            color: #f4f8fd;
+            font-weight: 700;
+            font-size: 15px;
+            margin-left: 5px;
+            text-align: center;
+            width: fit-content;
+            &:hover {
+                background-image: linear-gradient(to right, #045dfc, #5fa6c8);
+            color: transparent;
+            background-clip: text;
+            cursor: pointer;
+            
+
+            }
+            &:active {
+                background-image: linear-gradient(to right, #045dfc, #5fa6c8);
+            color: rgb(52, 196, 52);
+            background-clip: text;
+            }
+        }
+
+        @media (width <= 786px) {
+            .todo-list-input {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+        
+        .btn {
+            
+            padding: 0.8rem 0.6rem;
+            width: fit-content;
+        }
+        .btn2 {
+            
+            padding: 0.8rem 0.6rem;
+            width: fit-content;
+        }
+        .todo-list-input .btn {
+            margin-top: 1rem;
+        }
+    }
+
+    @media (width <= 600px) {
+        .section-todo {
+            width: 100%;
+            padding: 1.3rem;
+             
+            margin: 1rem 1rem;
+            & .todo-list-input {
+                padding: 1rem 0;
+                & #inputValue {
+                    
+                    border: solid #b4cfff 2px;
+                    width: 100%;
+                     
+                }
+            }
+        }
+    }
+
+    @media (width <= 500px) {
+         
+        .section-todo {
+            width: 100%;
+             padding: 1.3rem;
+              
+             margin: 0.3rem 0.3rem;
+             & .todo-list-input {
+                 padding: 1rem 0;
+                 & #inputValue {
+                    font-size: 13.5px;
+                     border: solid #b4cfff 2px;
+                     width: 100%;
+                      
+                 }
+             }
+         }
+         .section-todo .heading h1 {
+             
+            font-size: 25px;
+
+        }
+
+        .btn {
+            font-size: 13.5px;
+            background-image: linear-gradient(to right, #045dfc, #5fa6c8);
+            &:hover {
+                 background-clip: inherit;
+                background-color: black;
+            color: #f4f8fd;
+            }
+            &:active {
+                background-image: linear-gradient(to right, #045dfc, #5fa6c8);
+            color: transparent;
+            background-clip: text;
+            }
+        }
+        .btn2 {
+            font-size: 13.5px;
+            background-image: linear-gradient(to right, #045dfc, #5fa6c8);
+            &:hover {
+                 background-clip: inherit;
+                background-color: black;
+            color: #f4f8fd;
+            }
+            &:active {
+                background-image: linear-gradient(to right, #045dfc, #5fa6c8);
+            color: transparent;
+            background-clip: text;
+            }
+        }
+    }
+    </style>
+</head>
+<body>
+ <section class="section-todo">
+    <div class="heading">
+        <h1>Todo list</h1>
+    </div>
+    <form action="">
+        <div class="todo-list-input">
+            <input type="text" id="inputValue" placeholder="Type Something . . .">
+            <button class="btn">Add Todo</button>
+        </div>
+        <div class="todo-list-elem" >
+            <div class="main-todo-div1"> 
+                <p>Your todo list is empty, add something here...</p>
+            </div>
+             
+        </div>
+    </form>
+ </section>
+
+ <script>
+    const mainTodoElem = document.querySelector(".todo-list-elem");
+    const inputValue = document.getElementById("inputValue");
+    const divElement1 = document.querySelector(".main-todo-div1");
+
+    
+
+    const getTodoListFromLocal = () => {
+        return JSON.parse(localStorage.getItem("myTodoList",));
+    };
+
+    const addTodoListLocalStorage = (localTodoList) => {
+        return localStorage.setItem("myTodoList", JSON.stringify(localTodoList));
+    };
+
+    let localTodoList = getTodoListFromLocal() || [];
+    //  console.log(getTodoListFromLocal());
+
+    const addTodoDynamicElement = (curElem) => {
+        // divElement1.classList.add("main-todo-div2");
+         divElement1.innerHTML = ``; 
+
+         const divElement = document.createElement("div");
+         divElement.classList.add("main-todo-div");
+         divElement.innerHTML = `<ul>
+                    <li>${curElem}</li><button class="btn2">Delete Item</button>
+                </ul>`;
+                // console.log( `<ul>
+                //     <li>${inputValue.value.trim()}</li><button class="btn2">Delete Item</button>
+                // </ul>`);
+                
+                mainTodoElem.append(divElement);
+                inputValue.value = "";
+    };
+    
+    const addTodoList = (e) => {
+        e.preventDefault();
+         
+         const todoListValue = inputValue.value.trim();
+if (todoListValue !== "" && !localTodoList.includes(todoListValue)){
+         localTodoList.push(todoListValue);
+         localTodoList = [...new Set(localTodoList)];
+        //  console.log(localTodoList);
+
+         localStorage.setItem("myTodoList",JSON.stringify(localTodoList))
+
+        //  console.log(inputValue.value );
+        //  divElement1.classList.add("main-todo-div2");
+         divElement1.innerHTML = ``;  
+
+         const divElement = document.createElement("div");
+         divElement.classList.add("main-todo-div");
+         divElement.innerHTML = `<ul>
+                    <li>${inputValue.value}</li><button class="btn2">Delete Item</button>
+                </ul>`;
+                // console.log( `<ul>
+                //     <li>${inputValue.value.trim()}</li><button class="btn2">Delete Item</button>
+                // </ul>`);
+                
+                mainTodoElem.append(divElement);
+                
+            };
+            inputValue.value = "";
+    };
+
+    const showTodoList = () => {
+        console.log(localTodoList);
+        
+        localTodoList.forEach((curElem) => {
+            addTodoDynamicElement(curElem);
+        });
+    };
+    showTodoList ();
+
+    const removeTodoElem = (e) => {
+               
+               const todoToRemove = e.target;
+               let todoListContent = todoToRemove.previousElementSibling.innerText;
+               let parentElem = todoToRemove.parentElement;
+            //    console.log(todoListContent);
+
+               localTodoList = localTodoList.filter((curTodo) => {
+                // console.log(curTodo);
+                    return curTodo !== todoListContent.toLowerCase();
+                    // console.log(todoListContent);
+                });
+                console.log(localTodoList);
+                addTodoListLocalStorage(localTodoList);
+                parentElem.remove();
+               if(localTodoList.length === 0){ divElement1.innerHTML = `<p>Your todo list is empty, add something here...</p>` };
+    };
+
+    mainTodoElem.addEventListener("click", (e) => {
+        e.preventDefault();
+        if(e.target.classList.contains("btn2")){
+        removeTodoElem(e);
+    };
+    });
+
+    document.querySelector(".btn").addEventListener("click", (e) => {
+        addTodoList(e);
+    });
+
+    
+
+
+ </script>
+    
+</body>
+</html>
