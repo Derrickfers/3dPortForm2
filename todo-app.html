@@ -294,7 +294,7 @@
     const addTodoList = (e) => {
         e.preventDefault();
          
-         const todoListValue = inputValue.value.trim();
+         const todoListValue = inputValue.value.trim().toLowerCase(); 
 if (todoListValue !== "" && !localTodoList.includes(todoListValue)){
          localTodoList.push(todoListValue);
          localTodoList = [...new Set(localTodoList)];
@@ -340,7 +340,7 @@ if (todoListValue !== "" && !localTodoList.includes(todoListValue)){
                localTodoList = localTodoList.filter((curTodo) => {
                 // console.log(curTodo);
                     return curTodo !== todoListContent.toLowerCase();
-                    // console.log(todoListContent);
+                    console.log(todoListContent);
                 });
                 console.log(localTodoList);
                 addTodoListLocalStorage(localTodoList);
