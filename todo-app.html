@@ -18,8 +18,11 @@
         .section-todo .heading h1 {
             font-weight: bolder;
             background-image: linear-gradient(to right, #045dfc, #5fa6c8);
-            color: transparent;
+            
             background-clip: text;
+             -webkit-background-clip: text;
+             color: transparent;
+             -webkit-text-fill-color: transparent;
             margin: 0;
             text-align: center;
             text-transform: capitalize;
@@ -242,7 +245,7 @@
     <form action="">
         <div class="todo-list-input">
             <input type="text" id="inputValue" placeholder="Type Something . . .">
-            <button class="btn">Add Todo</button>
+            <button type="button" class="btn">Add Todo</button>
         </div>
         <div class="todo-list-elem" >
             <div class="main-todo-div1"> 
@@ -278,7 +281,7 @@
          const divElement = document.createElement("div");
          divElement.classList.add("main-todo-div");
          divElement.innerHTML = `<ul>
-                    <li>${curElem}</li><button class="btn2">Delete Item</button>
+                    <li>${curElem}</li><button type="button" class="btn2">Delete Item</button>
                 </ul>`;
                 // console.log( `<ul>
                 //     <li>${inputValue.value.trim()}</li><button class="btn2">Delete Item</button>
@@ -306,7 +309,7 @@ if (todoListValue !== "" && !localTodoList.includes(todoListValue)){
          const divElement = document.createElement("div");
          divElement.classList.add("main-todo-div");
          divElement.innerHTML = `<ul>
-                    <li>${inputValue.value}</li><button class="btn2">Delete Item</button>
+                    <li>${inputValue.value}</li><button type="button" class="btn2">Delete Item</button>
                 </ul>`;
                 // console.log( `<ul>
                 //     <li>${inputValue.value.trim()}</li><button class="btn2">Delete Item</button>
