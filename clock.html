@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+html {
+    font-size: 65%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+         
+        body {
+            
+      margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+            
+             
+        }
+        .background {
+            position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("binary-code.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    z-index: 0;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.1rem 0;
+        }
+        
+        .circle {
+            aspect-ratio: 1 / 1;
+            width: 37vw;
+            
+            border: solid #010B02 4.1vw; 
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* align-items: center;
+            justify-self: center; */
+           position: relative;
+           box-shadow: inset 0px 0px 40px 40px #010B02, 0 0 5px 2px #010B02;;
+           
+        }
+         
+        .rectangle {
+            background-color: #000a01;
+             width: 100%;
+             display: flex;
+             justify-content: center;
+             height: 4.6vw;
+             align-items: center;
+             position: absolute;
+             
+            & p {
+                background-color: #010B02;
+                letter-spacing: 0.1px;
+                word-spacing: 0.02px;
+                z-index: 1;
+                color: #3DCC1F;
+                 
+                font-size: 4.5vw;
+                display: inline;
+                margin: 0;
+                padding: 2.5rem 1.5rem;
+                border-radius: 5px; 
+                box-shadow: 0 0 5px 0.2px #3DCC1F;
+                -webkit-animation: glow 0.95s ease-in-out infinite alternate;
+  -moz-animation: glow 0.95s ease-in-out infinite alternate;
+  animation: glow 0.95s ease-in-out infinite alternate;
+  border: solid #3DCC1F 1px;
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 9px  #D3FE3E ;
+            }
+            to {
+                text-shadow: 0 0 10px  #693EFE ;
+            }  
+        }
+        
+
+        @-webkit-keyframes glow {
+            from {
+                text-shadow: 0 0 9px  #D3FE3E ;
+            }
+            to {
+                text-shadow: 0 0 10px  #693EFE ;
+            }  
+        }
+       
+        .dot-circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .dot-circle::after {
+            content: "";
+            position: absolute;
+            aspect-ratio: 1 / 1;
+            width: 40vw;
+             filter: blur(0.9px);
+              
+            border: double  #3DCC1F  25px;
+            border-radius: 50%;
+              
+        }
+        
+
+
+        @media (width <= 1036px){
+    .circle {
+            width: 50vw;
+            aspect-ratio: 1 / 1;
+            
+        }
+
+        .dot-circle::after {
+             
+            width: 53vw;
+             
+        }
+
+        .rectangle p {
+            font-size: 6vw;
+        }
+}
+@media (width <= 660px){
+    .circle {
+        aspect-ratio: 1 / 1;
+            width: 85vw;
+            
+            border: solid #010B02  6vw; 
+        }
+        .dot-circle::after {
+            aspect-ratio: 1 / 1; 
+             width: 87vw;
+             border: double  #3DCC1F  13px;
+         }
+
+         .rectangle p {
+            font-size: 10vw;
+        }
+
+        .rectangle {
+            height: 8.2vw;
+        } 
+}
+
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <section class="timer">
+        <div class="circle">
+            <div class="dot-circle">
+              <div class="rectangle">
+                <p id="clock"></p>
+              </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <script>
+        const currentTime = () => {
+            let curTime = new Date().toLocaleTimeString();
+            document.getElementById("clock").innerText = curTime;
+        };
+currentTime();
+// setInterval(() => {
+//     currentTime();
+// }, 1000);
+
+setInterval(currentTime, 1000);
+    </script>
+     
+</body>
+</html>
