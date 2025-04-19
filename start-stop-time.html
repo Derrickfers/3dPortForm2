@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer-count</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 66%;
+}
+
+body {
+    height: 100vh;
+   
+         
+    }
+
+ .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("binary-code.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    z-index: 0;
+    }
+
+.count-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem 1rem;
+    
+     
+}
+.container {
+    background-color: black;
+    padding: 1rem 1rem;
+    padding-top: 0.5rem;  
+    border: dotted 1px #3DCC1F;
+    box-shadow: #253139 0 0 9px 1px;
+    
+}
+
+
+.grid {
+    display: grid;
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1fr);
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.numCount {
+    justify-self: center;
+}
+
+.numCount p::before {
+    content:''; 
+    display:inline-block; 	
+    height:0.7em; 
+    width:0.7em;
+    background-image:url('arrow.gif'); 
+    background-size:contain; 	
+    background-repeat:no-repeat;
+    padding-right: 3px;
+}
+
+.numCount p::after {
+    content:''; 
+    display:inline-block; 	
+    height:0.7em; 
+    width:0.7em;
+    background-image:url('arrow.gif'); 
+    background-size:contain; 	
+    background-repeat:no-repeat;
+    rotate: 180deg;
+    padding-left: 3px;
+}
+
+.numShow {
+  background-color: #253139;  
+  margin: 2px 2px;
+  padding: 9px 9px;
+  border-radius: 5px;
+  height: 250px;
+  display: block;
+  overflow-y: auto; 
+    
+}
+
+.btn {
+    border: none;
+    padding: 7px 5px;
+    display: inline-block; 
+    margin: 2px 2px;
+    border-radius: 3px;
+    background-color: #3DCC1F ;
+    color: white;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+     
+    &:hover {
+        background-color: yellow;
+        color: black;
+        cursor: pointer;
+    }
+    &:active {
+        background-color: yellow;
+        color: white;
+    }
+}
+
+.numCount p {
+    padding: 2rem 2rem;
+    font-size: 65px;
+    font-weight: 700;
+    color: #3DCC1F;
+   display: flex;   
+   align-items: center;
+}
+
+.numShow li {
+    color: #3DCC1F;
+     
+    font-size: 20px;
+    text-transform: capitalize;
+    letter-spacing: 0.7px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding: 5px 0px; 
+}
+
+li {
+    /* list-style-type: disc;  
+  list-style-image: url('arrow.gif'); */
+  /* list-style: disc inside url('arrow.gif'); */
+  list-style: none;
+   
+   
+}
+li::before {
+    content:''; 
+    display:inline-block; 	
+    height:0.8em; 
+    width:0.8em;
+    background-image:url('arrow.gif'); 
+    background-size:contain; 	
+    background-repeat:no-repeat;
+    padding-right: 9px;
+    
+}
+
+  
+
+@media (width <= 450px) {
+   
+
+    .container {
+    width: 100%;
+    height: 90%;
+    padding: 1rem 1rem;
+}
+
+.count-time {
+     
+    margin: 0.5rem 0.5rem;
+    align-items: first baseline;
+}
+
+.numCount p {
+    padding: 3rem 2rem;
+   font-size: 70px;  
+}
+
+.btn {
+    padding: 9px 5px;
+    &:hover {
+        background-color: #3DCC1F;
+        color: white;
+    }
+    &:active {
+        background-color: #2ea117;
+        color: yellow;
+    }
+}
+}
+
+@media (width <= 320px) {
+    .container {
+        height: 400px;
+        overflow-y: auto; 
+     
+}
+}
+ 
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+
+<section class="count-time">
+    <div class="container">
+      <div class="numCount grid grid-cols-1">
+          <p id="countDown">00</p>
+      </div>
+
+      <div class="buttons grid grid-cols-2">
+        <button class="btn btn1">start</button>
+        <button class="btn btn2">stop</button>
+        <button class="btn btn3">reset</button>
+        <button class="btn btn4">show</button>
+         
+      </div>
+
+      <div class="numShow grid grid-cols-1">
+         
+      </div>
+      <button class="btn btn5">clear</button> 
+    </div>
+</section>
+
+<script>
+    const countDownElement = document.getElementById("countDown");
+    const numShowElement = document.querySelector(".numShow.grid.grid-cols-1");
+    let startCount = 0;
+    let intervalId;
+
+    const startTheTime = () => {
+         intervalId = setInterval(() => {
+            countDownElement.innerHTML = startCount++}, 1000);
+    };
+
+    const stopTheTime = () => {
+         clearInterval(intervalId);
+    };
+    
+    const resetTheTime = () => {
+        startCount = 0;
+        countDownElement.innerHTML = startCount;
+         clearInterval(intervalId);
+    };
+
+    const showTheTime = () => {
+         
+         const newPara = document.createElement("li");
+         newPara.innerHTML = `the time is ${startCount -1}`;
+         numShowElement.append(newPara);
+    };
+
+    const clearTheTime = () => {
+         numShowElement.innerHTML = "";
+    };
+
+
+    document.querySelector(".btn.btn1").addEventListener("click", startTheTime );
+    document.querySelector(".btn.btn2").addEventListener("click", stopTheTime);
+    document.querySelector(".btn.btn3").addEventListener("click", resetTheTime);
+    document.querySelector(".btn.btn4").addEventListener("click", showTheTime);
+    document.querySelector(".btn.btn5").addEventListener("click", clearTheTime);
+</script>
+</body>
+</html>
