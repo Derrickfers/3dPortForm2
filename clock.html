@@ -84,6 +84,7 @@ html {
   -moz-animation: glow 0.95s ease-in-out infinite alternate;
   animation: glow 0.95s ease-in-out infinite alternate;
   border: solid #3DCC1F 1px;
+  text-transform: uppercase;
             }
         }
 
@@ -182,9 +183,17 @@ html {
 
     <script>
         const currentTime = () => {
-            let curTime = new Date().toLocaleTimeString();
-            document.getElementById("clock").innerText = curTime;
+            const now = new Date();
+            const options = { 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit', 
+        hour12: true 
+    };
+            const formattedTime = now.toLocaleTimeString('en-IN', options);
+    document.getElementById("clock").innerText = formattedTime;
         };
+        
 currentTime();
 // setInterval(() => {
 //     currentTime();
